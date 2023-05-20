@@ -36,6 +36,71 @@
 
 트리는 **계층적 구조로 구성된 원소들의 집합**입니다. 각 원소는 자식에 대한 포인터를 가질 수 있고, 부모-자식 관계를 통해 구성됩니다.
 
+- Tree 용어들 정리. 
+
+<img width="612" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/d638fafa-ac91-4119-975e-9a07b271c693">
+
+1. 노드 : 트리의 구성요소
+2. 서브트리 : 하나의 노드와 그 노드들의 자손들로 이뤄진 트리 -> 쉽게 말해 전체 트리에서 부분적인 트리들.
+3. 노드의 차수 : 노드의 서브트리 개수, 예를 들어 노드의 하나에 3개의 노드가 연결되어 있다면 차수가 3이다. 
+4. 루트 노드 : 제일 위에 있는 노드 즉, 부모가 없는 노드
+5. 단말 노드 : 자식이 없는 노드. 자식이 없으니 차수가 0이다. 
+6. 형제 노드 : 부모가 같은 자식들
+7. 트리의 차수 : max{노드의 차수}
+8. 노드 레벨 : 트리의 각 층의 번호
+9. 트리의 높이 : max {노드의 레벨}
+10. 조상 : 루트까지의 경로상에 있는 모든 노드 
+
+> 솔직히 용어들을 다 알필요는 없고 이해합시다. 
+
+### 서브트리 
+
+서브트리 역시 또 다른 서브트리를 가진다. 이 말은 재귀적으로 구조가 이뤄져 있다는 것이다. 
+<img width="408" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/733694f3-a2d2-4f7e-83fc-367a5bb18ea6">
+
+트리 종류는 두 가지. 
+
+<img width="1027" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/d5c37167-677f-4ab8-b31a-6e44da1cb4f8">
+
+
+  1. 일반트리 
+  2. 이진 트리
+
+여기서 자주 공부하는 것은 이진 트리다. 
+
+
+
+### 이진트리 
+
+
+-> 모든 노드가 *최대 2개의 서브트리*를 가지는 트리를 마한다. 
+이 서브트리는 공백이거나 하나의 루트 노드 또는 두 개의 분이된 이진 트리로 구성된 노드의 유한 집합이다. (말이 너무 어렵다 . . . 그림으로 표시하자.)
+
+<img width="1040" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/24b195ba-6cd9-4f98-9236-b19709d7359d">
+
+이런 이진 트리는 재귀적 구성으로 존재한다. 아래 그림을 봐보자. 
+
+<img width="862" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/1b86eb31-8e91-4277-9260-bb297eee9f6c">
+
+노드의 개수가 *n*개 이면 최대 *간선*의 개수는 *n-1*개 이다. 
+
+---- 
+
+### 포화 이진 트리
+말 그대로 각 레벨에 노드가 가득 차있는 노드를 말한다. 
+깊이가 k일때, 최대의 노드 개수인 2^k-1의 노드를 가진다. 
+<img width="983" alt="image" src="https://github.com/wakeupmakeup/c_datastruct_study/assets/100953166/86564ce6-6862-4dd8-b5fa-d5c7afad37f9">
+
+
+
+
+
+
+
+
+
+
+
 ## 힙
 
 힙은 **특정 조건을 충족하는 완전 이진 트리 형태의 데이터 구조**입니다. 주로 최댓값 또는 최솟값을 빠르게 찾기 위해 사용됩니다.
