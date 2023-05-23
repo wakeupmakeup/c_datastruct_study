@@ -200,6 +200,31 @@ int cur, child;
  * 그러니 자식노드와 비교할 것이 있으니 밑으로 내려간다.  
 */
 cur = 1; // 현재 노드를 루트노드로 했다. 
-while ((cur*2) <= h->numOfData)
+while ((cur*2) <= h->numOfData) { 
+    // 왼쪽, 오른쪽 자식 중 더 큰 값을 가진 위치를 자식 노드로 한다.
+    child = cur * 2;
+
+    // 여기서 child는 일단 왼쪽 노드를 뜻한다. 
+    // 그리고 child + 1을 한것은 오른쪽 노드를 뜻한다. 
+    // 오른쪽 노드가 마지막 노드의 값과 같거나 작고 왼쪽 노드의 값이 오른쪽 노드보다 작다면 오른쪽 노드가 자식 노드가 된다. 
+    if (((child+1) <= h->numOfData) && (h->data[child] < h->data[child+1]))
+    // 그래서 child에 ++해줘서 현재 왼쪽 노드인것을 오른쪽으로 바꿔주는 것이다. 
+    child++
+
+    // 어떤 경우일때 break를 걸어야 하는지 알아보자. 
+    // 자식 노드의 값이 부모노드보다 같거나 작을때 더 이상 진행할 필요가 없으니 반복을 종료한다.
+    // 그러지 않을 경우 부모와 자식의 값을 교환해야한다. 그래서 temp라는 변수가 필요하다. 
+
+    int temp;  
+    if(h->heap[child] <= h->heap[cur])
+        break; 
+    // 부모 자식 값 교환하기. 
+    temp = h->heap[child];
+    h->heap[child] = h->heap[cur];
+    h->heap[cur] = temp; 
     
+    cur = child; 
+}
+
+    return topdata;
 }
